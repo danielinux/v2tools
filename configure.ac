@@ -11,9 +11,9 @@ AC_CONFIG_HEADERS([config.h])
 AC_PROG_CC
 
 # Checks for libraries.
-AC_CHECK_LIB([bz2], [BZ2_bzopen])
-AC_CHECK_LIB([mhash], [mhash_init])
-AC_CHECK_LIB([z], [gzopen])
+AC_CHECK_LIB([bz2], [BZ2_bzopen], , echo && echo "Error: Cannot find bz2 library." && exit 1)
+AC_CHECK_LIB([mhash], [mhash_init], , echo && echo "Error: Cannot find mhash library." && exit 1)
+AC_CHECK_LIB([z], [gzopen], , echo && echo "Error: Cannot find z library." && exit 1)
 
 # Checks for header files.
 AC_CHECK_HEADERS([fcntl.h stdlib.h string.h unistd.h])
